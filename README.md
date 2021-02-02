@@ -61,16 +61,17 @@ You will need to install the following locally:
 ## Monthly Cost Analysis
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
-Azure Resource	               |  Service Tier            |	Monthly Cost	|
------------------------------ | ------------------------ | --------------- | -------------------------------
-Azure Postgres Database       |  Basic (1 vCore, 50GB)   |	$30.3	
-Azure Service Bus	   	      |  Basic                   |  $0.05	         |  per million operations
-Azure App Service             |	Free (1 App, 1GB)       |	$0	            |  for 1 app, 
-Azure Functions	            |  Consumption Plan	      |  $0	            |  for first 1 million execution 
-		                        |                          |  $0.2	         |  per million executions
-		                        |                          |  $0	            |  for first 400,000GB-s
-		                        |                          |  $0.000016	   |  per GB-s
-Azure Storage Account	      |  Block Blobs             |	$0.00081	      |  per GB
+| Azure Resource	         |  Service Tier            |	Monthly Cost	| Detail                            |
+| ------------------------ | ------------------------ | --------------- | --------------------------------- |
+| Azure Postgres Database  |  Basic (1 vCore, 50GB)   |	$30.3	         |                                   |
+| Azure Service Bus	      |  Basic                   |  $0.05	         |  per million operations           |
+| Azure App Service        |	Free (1 App, 1GB)       |	$0	            |  for 1 app,                       |
+| Azure Functions	         |  Consumption Plan	      |  $0	            |  for first 1 million execution    |
+| 		                     |                          |  $0.2	         |  per million executions           |
+| 		                     |                          |  $0	            |  for first 400,000GB-s            |
+| 		                     |                          |  $0.000016	   |  per GB-s                         |
+| Azure Storage Account	   |  Block Blobs             |	$0.00081	      |  per GB                           |
+
 
 
 
