@@ -61,11 +61,21 @@ You will need to install the following locally:
 ## Monthly Cost Analysis
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
-| Azure Resource | Service Tier | Monthly Cost |
-| ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+Azure Resource	               |  Service Tier            |	Monthly Cost	|
+----------------------------- | ------------------------ | --------------- | -------------------------------
+Azure Postgres Database       |  Basic (1 vCore, 50GB)   |	$30.3	
+Azure Service Bus	   	      |  Basic                   |  $0.05	         |  per million operations
+Azure App Service             |	Free (1 App, 1GB)       |	$0	            |  for 1 app, 
+Azure Functions	            |  Consumption Plan	      |  $0	            |  for first 1 million execution 
+		                        |                          |  $0.2	         |  per million executions
+		                        |                          |  $0	            |  for first 400,000GB-s
+		                        |                          |  $0.000016	   |  per GB-s
+Azure Storage Account	      |  Block Blobs             |	$0.00081	      |  per GB
+
+
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+The architecture for this application uses several Azure cloud solutions.  The web app is a simple application that has no unique setup needs.  This allows us to move away hosting it on a bare-metal server or virtual machine.  We can use Azure's App service to host the web app.
+
+The application does send email and if there are a lot of emails to send, this can be a long process.  We could include this directly in our web app, but it may slow down its performance in peak use periods.  We can move this functionality to an Azure Function.  Azure Functions provide an endpooint where we can run code in response to an event. Offloading the email notification feature will speed up app's performance.
+
